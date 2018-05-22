@@ -22,7 +22,6 @@ export default class App extends Component<Props> {
         <Slider
           value={this.state.value}
           onValueChange={value => this.setState({ value })}
-          multiplicity={0.2}
         />
       </View>
     );

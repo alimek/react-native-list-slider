@@ -30,7 +30,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
   };
 
   state = {
-    items: generateArrayBlock(this.props.length),
+    items: generateArrayBlock(this.props.arrayLength),
     width: 0,
     oneItemWidth: 0,
   };

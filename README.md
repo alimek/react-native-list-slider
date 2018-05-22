@@ -2,7 +2,7 @@
 
  List slider for React Native - Pure JS Slider base on FlatList. `Android` and `iOS` platform supported. Tested on `RN` version `0.55.x`.
 
- ![2018-05-15 23-13-00](https://thumbs.gfycat.com/MasculineBeneficialLice-max-1mb.gif)
+ ![2018-05-15 23-13-00](https://thumbs.gfycat.com/PowerfulMarriedAssassinbug-max-1mb.gif)
 
  # Props
 
