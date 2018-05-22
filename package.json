@@ -1,0 +1,29 @@
+{
+  "name": "react-native-infinity-slider",
+  "version": "1.0.3",
+  "description": "ReactNative Infinity Slider",
+  "main": "src/index.js",
+  "repository": "https://github.com/alimek/react-native-infinity-slider.git",
+  "author": "Grzegorz Mandziak (alimek@alimek.pl)",
+  "license": "MIT",
+  "private": false,
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.3",
+    "babel-plugin-flow-react-proptypes": "^24.0.0",
+    "babel-preset-react-native": "^4.0.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.8.2",
+    "flow": "^0.2.3",
+    "flow-bin": "^0.72.0",
+    "prettier": "^1.12.1",
+    "react": "^16.3.2",
+    "react-native": "^0.55.4"
+  }
+}
