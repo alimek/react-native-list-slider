@@ -24,9 +24,9 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
   } = null;
 
   static defaultProps = {
-    multiplicity: 10,
+    multiplicity: 0.1,
     decimalPlaces: 1,
-    arrayLength: 1000,
+    arrayLength: 10000,
   };
 
   state = {

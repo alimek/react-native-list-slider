@@ -12,7 +12,7 @@
  | onValueChange | `Function` | required | Callback called on every value changed. `value: Number` as parameter.|
  | multiplicity | `Number` | `0.1` |  |
  | decimalPlaces | `Number` | `1` |  |
- | arrayLength | `Number` | 1000 |  |
+ | arrayLength | `Number` | 10000 |  |
  | renderThumb | `Function` | optional | Function to render thumb - middle component which is fixed |
  | thumbStyle | `Object` | optional | You can pass your style to overwrite default one |
 
