@@ -1,0 +1,12 @@
+{
+  "presets": [
+    "react-native"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "alias": {
+        "react-native-infinity-list-slider": ".."
+      }
+    }]
+  ]
+}
