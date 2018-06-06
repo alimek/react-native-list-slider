@@ -9,6 +9,7 @@ type ItemPropTypes = {
   borderWidth: number,
   index: number,
   style?: Object,
+  activeStyle?: Object,
 };
 
 const {
@@ -18,10 +19,11 @@ const {
 class Item extends React.PureComponent<ItemPropTypes> {
   static defaultProps = {
     style: null,
+    activeStyle: null,
   };
 
   render() {
-    const { oneColumnSize, borderWidth, index, style } = this.props;
+    const { oneColumnSize, borderWidth, index, style, activeStyle } = this.props;
 
     return (
       <View
@@ -30,6 +32,7 @@ class Item extends React.PureComponent<ItemPropTypes> {
           { width: oneColumnSize, borderRightWidth: borderWidth },
           (index + 1) % 10 === 0 ? { borderRightWidth: borderWidth + 2, height: 70 } : null,
           style,
+          activeStyle,
         ]}
       />
     );

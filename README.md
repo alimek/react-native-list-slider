@@ -17,6 +17,7 @@
  | thumbStyle | `Object` | optional | You can pass your style to overwrite default one |
  | mainContainerStyle | `Object` | optional | You can pass your style to overwrite default container style |
  | itemStyle | `Object` | optional | You can pass your style to overwrite default item style |
+ | activeItemStyle | `Object` | optional | You can pass your style to overwrite active item style |
  | shouldMoveSlider | `boolean` | `false` | If `true` is passed, next update will change offset on `Flatlist` |
  | scrollEnabled | `boolean` | `true` | Is enabled to scroll or not |
 

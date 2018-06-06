@@ -31,6 +31,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
     scrollEnabled: true,
     mainContainerStyle: null,
     itemStyle: null,
+    activeItemStyle: null,
   };
 
   state = {
@@ -76,6 +77,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
       borderWidth={borderWidth}
       index={element.index}
       style={this.props.itemStyle}
+      activeStyle={this.props.activeItemStyle}
     />
   );
 
