@@ -1,6 +1,6 @@
 {
   "name": "react-native-list-slider",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "ReactNative List Slider",
   "main": "src/index.js",
   "repository": "https://github.com/alimek/react-native-list-slider.git",

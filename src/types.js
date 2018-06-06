@@ -11,7 +11,7 @@ export type RNInfinityListSliderPropTypes = {
   scrollEnabled: boolean,
   mainContainerStyle?: Object,
   itemStyle?: Object,
-  activeItemStyle?: Object,
+  tenthItemStyle?: Object,
 };
 
 export type RNInfinityListSliderState = {
