@@ -8,6 +8,9 @@ export type RNInfinityListSliderPropTypes = {
   decimalPlaces?: number,
   arrayLength: number,
   shouldMoveSlider?: boolean,
+  scrollEnabled: boolean,
+  mainContainerStyle?: Object,
+  itemStyle?: Object,
 };
 
 export type RNInfinityListSliderState = {

@@ -28,6 +28,9 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
     decimalPlaces: 1,
     arrayLength: 10000,
     shouldMoveSlider: false,
+    scrollEnabled: true,
+    mainContainerStyle: null,
+    itemStyle: null,
   };
 
   state = {
@@ -72,6 +75,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
       oneColumnSize={this.state.oneItemWidth}
       borderWidth={borderWidth}
       index={element.index}
+      style={this.props.itemStyle}
     />
   );
 
@@ -85,12 +89,15 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
   );
 
   render() {
-    const { renderThumb } = this.props;
+    const { renderThumb, scrollEnabled, mainContainerStyle } = this.props;
     const { items, width } = this.state;
 
     return (
       <View
-        style={styles.mainContainer}
+        style={[
+          styles.mainContainer,
+          mainContainerStyle,
+        ]}
         onLayout={this.onLayout}
       >
         {
@@ -100,6 +107,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
               ref={(flatList) => {
                 this.flatList = flatList;
               }}
+              scrollEnabled={scrollEnabled}
               data={items}
               keyboardShouldPersistTaps="always"
               horizontal

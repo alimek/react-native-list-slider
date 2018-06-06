@@ -8,6 +8,7 @@ type ItemPropTypes = {
   oneColumnSize: number,
   borderWidth: number,
   index: number,
+  style?: Object,
 };
 
 const {
@@ -15,8 +16,12 @@ const {
 } = ReactNative;
 
 class Item extends React.PureComponent<ItemPropTypes> {
+  static defaultProps = {
+    style: null,
+  };
+
   render() {
-    const { oneColumnSize, borderWidth, index } = this.props;
+    const { oneColumnSize, borderWidth, index, style } = this.props;
 
     return (
       <View
@@ -24,6 +29,7 @@ class Item extends React.PureComponent<ItemPropTypes> {
           styles.subBlock,
           { width: oneColumnSize, borderRightWidth: borderWidth },
           (index + 1) % 10 === 0 ? { borderRightWidth: borderWidth + 2, height: 70 } : null,
+          style,
         ]}
       />
     );
