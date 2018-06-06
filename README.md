@@ -15,6 +15,7 @@
  | arrayLength | `Number` | 10000 |  |
  | renderThumb | `Function` | optional | Function to render thumb - middle component which is fixed |
  | thumbStyle | `Object` | optional | You can pass your style to overwrite default one |
+ | shouldMoveSlider | `boolean` | `false` | If `true` is passed, next update will change offset on `Flatlist` |
 
  # How to use it
 

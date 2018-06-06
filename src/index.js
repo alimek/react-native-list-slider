@@ -27,6 +27,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
     multiplicity: 0.1,
     decimalPlaces: 1,
     arrayLength: 10000,
+    shouldMoveSlider: false,
   };
 
   state = {
@@ -34,6 +35,12 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
     width: 0,
     oneItemWidth: 0,
   };
+
+  componentDidUpdate() {
+    if (this.props.shouldMoveSlider) {
+      this.scrollToElement(this.props.value);
+    }
+  }
 
   onLayout = (event: Event) => {
     this.setState({
@@ -52,11 +59,13 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
   };
 
   init = () => {
-    setTimeout(() => this.flatList && this.flatList.scrollToOffset({
-      offset: (this.props.value * this.state.oneItemWidth) / this.props.multiplicity,
-      animated: false,
-    }), 100);
+    setTimeout(() => this.scrollToElement(this.props.value), 100);
   };
+
+  scrollToElement = (value: number) => this.flatList && this.flatList.scrollToOffset({
+    offset: (value * this.state.oneItemWidth) / this.props.multiplicity,
+    animated: false,
+  });
 
   renderItem = (element: Element) => (
     <Item

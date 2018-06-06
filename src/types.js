@@ -1,19 +1,19 @@
+// @flow
 export type RNInfinityListSliderPropTypes = {
   value: number,
   onValueChange: Function,
   renderThumb?: Function,
   thumbStyle?: Object,
-  multiplicity?: number,
+  multiplicity: number,
   decimalPlaces?: number,
-  arrayLength?: number,
+  arrayLength: number,
+  shouldMoveSlider?: boolean,
 };
 
 export type RNInfinityListSliderState = {
-  value: number,
-  previewValue: number,
-  currentXStep: number,
-  isMoving: boolean,
   width: number,
+  items: Array<number>,
+  oneItemWidth: number,
 };
 
 export type Event = {
