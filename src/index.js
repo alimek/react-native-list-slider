@@ -109,6 +109,9 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
               ref={(flatList) => {
                 this.flatList = flatList;
               }}
+              getItemLayout={(data, index) => (
+                {length: this.state.oneItemWidth, offset: this.state.oneItemWidth * index, index}
+              )}
               scrollEnabled={scrollEnabled}
               data={items}
               keyboardShouldPersistTaps="always"
