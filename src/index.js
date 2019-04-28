@@ -30,6 +30,7 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
     mainContainerStyle: null,
     itemStyle: null,
     tenthItemStyle: null,
+    initialPositionValue: 0,
   };
 
   constructor(props) {
