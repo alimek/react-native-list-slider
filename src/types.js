@@ -12,6 +12,8 @@ export type RNInfinityListSliderPropTypes = {
   mainContainerStyle?: Object,
   itemStyle?: Object,
   tenthItemStyle?: Object,
+  initialPositionValue?: number,
+  maximumValue?: number,
 };
 
 export type RNInfinityListSliderState = {

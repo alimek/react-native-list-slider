@@ -4,7 +4,7 @@ import ReactNative from 'react-native';
 
 import styles from './styles';
 import Item from './Item';
-import type { RNInfinityListSliderPropTypes, RNInfinityListSliderState, Event, Element } from './types';
+import type { Element, Event, RNInfinityListSliderPropTypes, RNInfinityListSliderState } from './types';
 
 const itemAmountPerScreen = 20;
 const borderWidth = 1;
@@ -13,12 +13,10 @@ const {
   View,
 } = ReactNative;
 
-const generateArrayBlock = (length: number): Array<number> => new Array(length).fill(0);
-
 class ReactNativeInfinityListSlider extends React.PureComponent<
   RNInfinityListSliderPropTypes,
   RNInfinityListSliderState,
-> {
+  > {
   flatList: ?{
     scrollToOffset: Function,
   } = null;
@@ -34,11 +32,15 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
     tenthItemStyle: null,
   };
 
-  state = {
-    items: generateArrayBlock(this.props.arrayLength),
-    width: 0,
-    oneItemWidth: 0,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      items: this.generateArrayBlock(),
+      width: 0,
+      oneItemWidth: 0,
+    };
+  }
+
 
   componentDidUpdate() {
     if (this.props.shouldMoveSlider) {
@@ -56,10 +58,26 @@ class ReactNativeInfinityListSlider extends React.PureComponent<
 
   onSliderMoved = (event: Event) => {
     const { oneItemWidth } = this.state;
-    const { onValueChange } = this.props;
+    const { onValueChange, initialPositionValue, maximumValue } = this.props;
 
-    const newValue = Math.floor(event.nativeEvent.contentOffset.x / oneItemWidth) * this.props.multiplicity;
+    let newValue = initialPositionValue + Math.floor(event.nativeEvent.contentOffset.x / oneItemWidth) * this.props.multiplicity;
+    if (newValue > maximumValue) {
+      newValue = maximumValue;
+    }
     onValueChange(parseFloat(parseFloat(newValue).toFixed(this.props.decimalPlaces)));
+  };
+
+  generateArrayBlock = (): Array<number> => {
+    const { arrayLength, maximumValue, multiplicity } = this.props;
+
+    let length = arrayLength;
+
+    if (maximumValue) {
+      length = maximumValue / multiplicity;
+      length += itemAmountPerScreen;
+    }
+
+    return new Array(length).fill(0);
   };
 
   init = () => {
