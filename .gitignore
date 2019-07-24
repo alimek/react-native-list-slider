@@ -1,3 +1,5 @@
 .idea/
 yarn-error.log
-node-modules/*
+node_modules
+dist/
+!dist/.gitkeep

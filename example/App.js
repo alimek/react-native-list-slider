@@ -1,48 +1,60 @@
-// @flow
-import React, { Component } from 'react';
+/**
+ * Sample React Native App
+ * https://github.com/facebook/react-native
+ *
+ * @format
+ * @flow
+ */
+
+import React, { Fragment, useState } from 'react';
 import {
   StyleSheet,
+  View,
   Text,
-  View
+  StatusBar,
+  TouchableOpacity
 } from 'react-native';
-import Slider from 'react-native-infinity-list-slider';
 
-type Props = {};
-export default class App extends Component<Props> {
-  state = {
-    value: 2.6,
-  };
+import { Colors } from 'react-native/Libraries/NewAppScreen';
+import Slider from '../src/index';
 
-  render() {
-    return (
-      <View style={styles.container}>
+const App = () => {
+  const [value, setValue] = useState(10);
+
+  return (
+    <Fragment>
+      <StatusBar barStyle="dark-content" />
+      <View style={styles.body}>
         <View>
-          <Text>{this.state.value}</Text>
+          <TouchableOpacity
+            onPress={() => setTimeout(() => setValue(20), 2000)}
+          >
+            <Text>Change Value to 20 with Delay</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => setValue(25)}
+          >
+            <Text>Change Value to 25 now</Text>
+          </TouchableOpacity>
+          <Text style={styles.sectionTitle}>{value}</Text>
+          <Slider value={value} onValueChange={setValue} multiplicity={1} />
         </View>
-        <Slider
-          value={this.state.value}
-          onValueChange={value => this.setState({ value })}
-        />
       </View>
-    );
-  }
-}
+    </Fragment>
+  );
+};
 
 const styles = StyleSheet.create({
-  container: {
+  body: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: Colors.white,
+    justifyContent: 'center'
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  sectionTitle: {
+    fontSize: 24,
+    color: Colors.black
+  }
 });
+
+export default App;

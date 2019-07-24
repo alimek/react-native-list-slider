@@ -1,0 +1,13 @@
+{
+  "name": "react-native-list-slider",
+  "version": "1.2.0",
+  "description": "ReactNative List Slider",
+  "license": "MIT",
+  "main": "index.js",
+  "repository": "https://github.com/alimek/react-native-list-slider.git",
+  "author": "Grzegorz Mandziak (alimek@alimek.pl)",
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  }
+}
