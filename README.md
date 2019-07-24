@@ -18,7 +18,6 @@
  | mainContainerStyle | `Object` | optional | You can pass your style to overwrite default container style |
  | itemStyle | `Object` | optional | You can pass your style to overwrite default item style |
  | tenthItemStyle | `Object` | optional | You can pass your style to overwrite active item style |
- | shouldMoveSlider | `boolean` | `false` | If `true` is passed, next update will change offset on `Flatlist` |
  | scrollEnabled | `boolean` | `true` | Is enabled to scroll or not |
  | initialPositionValue | `number` | `undefined` | value of 1st element |
  | maximumValue | `number` | `undefined` | max value to achieve |
