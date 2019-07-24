@@ -6,7 +6,6 @@ export interface RNInfinityListSliderPropTypes {
   multiplicity: number;
   decimalPlaces?: number;
   arrayLength: number;
-  shouldMoveSlider?: boolean;
   scrollEnabled: boolean;
   mainContainerStyle?: Object;
   itemStyle?: Object;
